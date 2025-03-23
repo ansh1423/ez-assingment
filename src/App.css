@@ -1,38 +1,330 @@
-.App {
-  text-align: center;
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+
+    font-family: 'Raleway', sans-serif;
+  
+  /* font-family: 'Roboto', sans-serif; */
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-container {
+  width: 100%;
   min-height: 100vh;
+  padding: 2rem;
+}
+
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+/* Logo and Branding */
+.branding {
+  margin-bottom: 3rem;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  height: 100%;
+}
+
+.logo-container {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 1rem;
+}
+
+.logo-box {
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
+
+.logo-text {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #42b0d5;
+}
+
+.logo-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  /* color: #42b0d5; */
+  color:#3BC3F2;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f2a43;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  text-align: start;
+  max-width: 600px;
+}
+
+/* Form */
+.form-container {
+  max-width: 600px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: #42b0d5;
+  box-shadow: 0 0 0 2px rgba(66, 176, 213, 0.2);
+}
+
+.input-error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.success-message {
+  color: #2ecc71;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.submit-button {
+  background-color: #f4813f;
   color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-button:hover {
+  background-color: #e67230;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.submit-button:disabled {
+  background-color: #fab999;
+  cursor: not-allowed;
+}
+
+/* Services Section */
+.plevel {
+  display: flex;
+  flex-direction: row;
+  gap: 10px; /* Yahan apne requirement ke according gap adjust karo */
+}
+
+.services-section {
+  margin-top: 2rem;
+  align-self: flex-end;
+  width: 100%;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.service-card {
+  background-color: #0f2a43;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  height: 100%;
+}
+
+.service-icon {
+  color: #42b0d5;
+  margin-bottom: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.service-title {
+  font-size:13px;
+  text-align: start;
+  /* font-weight: 500; */
+  color: #42b0d5;
+  /* //margin-bottom: 0.75rem; */
+}
+
+.service-description {
+  font-size: 0.875rem;
+  color: #bbb;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Space between logo and services */
+    min-height: 80vh; /* Ensure enough height for centering */
   }
-  to {
-    transform: rotate(360deg);
+
+  .branding {
+    width: 40%;
+    margin-bottom: 0;
+  }
+
+  .services-section {
+    width: 58%; /* Slightly less than 60% to ensure gap */
+    margin-top: 0;
+  }
+
+  .form-container form {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .input-group {
+    flex: 1;
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+
+  .submit-button {
+    align-self: flex-start;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile View (480px) */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .branding {
+    order: 1; /* Move brand section first */
+  }
+  
+  .services-section {
+    order: 2; /* Services in the middle */
+  }
+  
+  .form-container {
+    order: 3; /* Form at the bottom */
+    margin-top: 2rem;
+  }
+
+  .logo-text, .logo-title {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container form {
+    flex-direction: column;
+  }
+
+  .input-group {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+}
+
+/* Tablet View (720p) */
+@media (min-width: 481px) and (max-width: 720px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .branding, .services-section {
+    width: 100%;
+  }
+  
+  /* Move form to bottom on tablet */
+  .branding {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-container {
+    order: 2;
+    margin-top: 2rem;
+  }
+}
+
+/* Larger Screens - iPad (2732x2048) */
+@media (min-width: 1024px) and (max-width: 2732px) {
+  .app-container {
+    padding: 2rem 4rem;
+  }
+
+  .main-content {
+    max-width: 1800px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* MacBook (1440x823) */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .app-container {
+    padding: 2rem 3rem;
   }
 }
